@@ -2,6 +2,7 @@ package com.example.lablearnandroid
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -37,7 +38,15 @@ class MainActivity : ComponentActivity() {
             RPGCardView()
         }
     }
+    override fun onResume() {
+        super.onResume()
+        Log.i("Lifecycle", "MainActivity : onResume")
+    }
 
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle", "MainActivity : onPause")
+    }
     @Composable
     fun RPGCardView() {
         Column(
@@ -68,7 +77,7 @@ class MainActivity : ComponentActivity() {
                     .align(Alignment.CenterHorizontally)
                     .padding(top = 16.dp, bottom = 32.dp)
                     .clickable {
-                        startActivity(Intent(this@MainActivity, PokedexActivity::class.java))
+                        startActivity(Intent(this@MainActivity, MainActivity2::class.java))
                     }
             )
 
