@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.lablearnandroid.Utills.SharedPreferencesActivity
 import com.example.lablearnandroid.ui.theme.LabLearnAndroidTheme
 
 
@@ -41,6 +42,11 @@ class MenuActivity : ComponentActivity() {
                     startActivity(Intent(this@MenuActivity, MainActivity2::class.java))
                 }) {
                     Text("LifeCycleComposeActivity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, SharedPreferencesActivity::class.java))
+                }) {
+                    Text("SharedPreferencesActivity")
                 }
             }
         }
