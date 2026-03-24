@@ -5,12 +5,8 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
@@ -24,10 +20,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.nestedscroll.NestedScrollSource.Companion.SideEffect
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.lablearnandroid.ui.theme.LabLearnAndroidTheme
 
 class MainActivity2 : ComponentActivity() {
@@ -59,15 +52,12 @@ fun LifecycleDemo(modifier: Modifier = Modifier) {
 
 @Composable
 fun LifecycleComponent() {
-    // State สำหรับ Recomposition
     var text by remember { mutableStateOf("") }
 
-    // Log เมื่อ Recompose
     SideEffect {
         Log.d("ComposeLifecycle", "Recompose: $text")
     }
 
-    // Log เมื่อ Enter/Leave
     DisposableEffect(Unit) {
         Log.d("ComposeLifecycle", "Enter Composition")
         onDispose {

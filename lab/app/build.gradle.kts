@@ -65,4 +65,7 @@ dependencies {
 
     // Lifecycle & ViewModel สำหรับ Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+    
+    // play-services-location สำหรับเรียกใช้ FusedLocationProviderClient
+    implementation("com.google.android.gms:play-services-location:21.2.0")
 }
